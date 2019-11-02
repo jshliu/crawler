@@ -1,0 +1,15 @@
+*.pid
+*.pyc
+*.usr.cfg
+*.settings
+
+.idea/
+*.iml
+
+log/
+.project
+.pydevproject
+.ropeproject/
+
+.DS_Store
+dump.rdb

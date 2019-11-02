@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+
+<objects>
+
+	<object id="ArticleContentCrawler" module="service.crawlerimpl.general.general" attr="ArticleContentCrawler" />
+
+	<object id="bosonutil.getTag" module="utils.bosonutil" attr="getTag" />
+
+	<object id="CassandraQueryApi" module="utils.db.cassandrautil" attr="CassandraQueryApi" />
+	<object id="Crawler" module="service.scheduler.crawler" attr="Crawler" />
+	<object id="CrawlerConf" module="service.scheduler.crawler" attr="CrawlerConf" />
+	<object id="CrawlerDaemon" module="crawler.service.scheduler.daemon" attr="CrawlerDaemon" />
+
+	<object id="utils.Daemon" module="utils.daemon" attr="Daemon" />
+	<object id="datetimeutil.new_time" module="utils.datetimeutil" attr="new_time" />
+	<object id="datetimeutil.fmt_time" module="utils.datetimeutil" attr="fmt_time" />
+	<object id="datetimeutil.local2utc" module="utils.datetimeutil" attr="local2utc" />
+
+	<object id="ecommerce.ContentModel" module="service.models.ecommerce.base" attr="ContentModel" />
+	<object id="export" module="service.scheduler.crawler" attr="export" />
+
+	<object id="FatherCrawler" module="service.crawlerimpl.general.general" attr="FatherCrawler" />
+	<object id="Field" module="service.crawlerimpl.general.field" attr="Field" />
+
+	<object id="get_exception_info" module="utils.monitor" attr="get_exception_info" />
+
+	<object id="Handler" module="service.scheduler.handler" attr="Handler" />
+	<object id="htmlutil" module="utils.htmlutil" />
+	<object id="htmlutil.extract_html" module="utils.htmlutil" attr="extract_html" />
+	<object id="htmlutil.extract_xml" module="utils.htmlutil" attr="extract_xml" />
+	<object id="htmlutil.is_url" module="utils.htmlutil" attr="is_url" />
+
+	<object id="ModelBase" module="service.models.modelbase" attr="ModelBase" />
+
+
+	<object id="pathutil.correct_link" module="utils.pathutil" attr="correct_link" />
+	<object id="pathutil.join_path" module="utils.pathutil" attr="join_path" />
+	<object id="procedure" module="service.scheduler.procedure" attr="procedure" />
+	<object id="processutil._create_child" module="utils.processutil" attr="_create_child" />
+	<object id="processutil.multiprocess_worker" module="utils.processutil" attr="multiprocess_worker" />
+
+	<object id="Readability" module="utils.readability" attr="Readability" />
+	<object id="RedisQueryApi" module="utils.db.redisutil" attr="RedisQueryApi" />
+
+	<object id="search.ContentModel" module="service.models.search.base" attr="ContentModel" />
+	<object id="SearchArticleModel" module="service.models.search.model" attr="SearchArticleModel" />
+	<object id="SearchContentCrawler" module="service.crawlerimpl.general.general" attr="SearchContentCrawler" />
+	<object id="datetimeutil.str2time" module="utils.datetimeutil" attr="str2time" />
+
+	<object id="textutil.clean_list" module="utils.textutil" attr="clean_list" />
+	<object id="textutil.clean_text" module="utils.textutil" attr="clean_text" />
+	<object id="textutil.clean_url" module="utils.textutil" attr="clean_url" />
+	<object id="textutil.clean_paragraph" module="utils.textutil" attr="clean_paragraph" />
+	<object id="textutil.clear_space" module="utils.textutil" attr="clear_space" />
+	<object id="textutil.convert_escape" module="utils.textutil" attr="convert_escape" />
+	<object id="textutil.extract_key" module="utils.textutil" attr="extract_key" />
+	<object id="textutil.is_uuid" module="utils.textutil" attr="is_uuid" />
+	<object id="datetimeutil.time2str" module="utils.datetimeutil" attr="time2str" />
+	<object id="typeutil.convert" module="utils.typeutil" attr="convert" />
+
+	<object id="datetimeutil.unix_time" module="utils.datetimeutil" attr="unix_time" />
+	<object id="Url" module="service.crawlerimpl.general.field" attr="Url" />
+
+	<object id="weibo.ContentModel" module="service.models.weibo.base" attr="ContentModel" />
+	<object id="WeiboArticleModel" module="service.models.weibo.model" attr="WeiboArticleModel" />
+	<object id="WeiboHotModel" module="service.models.weibo.model" attr="WeiboHotModel" />
+	<object id="weixin.ContentModel" module="service.models.weixin.base" attr="ContentModel" />
+	<object id="WeixinArticleModel" module="service.models.weixin.model" attr="WeixinArticleModel" />
+
+	<object id="ZjldArticleModel" module="service.models.zjld.model" attr="ZjldArticleModel" />
+	<object id="zjld.ContentModel" module="service.models.zjld.base" attr="ContentModel" />
+
+
+
+	<!-- django model -->
+	<object id="Task" module="apps.base.models" attr="Task" />
+
+</objects>
