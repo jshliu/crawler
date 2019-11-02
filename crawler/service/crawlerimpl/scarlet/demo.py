@@ -7,6 +7,7 @@ import django, os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.development");
 django.setup()
 import re
+import json
 from datetime import datetime
 
 from apps.base.models import ScarletOnsell
@@ -18,6 +19,7 @@ SearchContentCrawler = Context().get("SearchContentCrawler")
 FatherCrawler = Context().get("FatherCrawler")
 Field = Context().get("Field")
 Crawler = Context().get("Crawler")
+Handler = Context().get("Handler")
 
 
 class BuffOnsellCrawler(Crawler):
@@ -25,6 +27,7 @@ class BuffOnsellCrawler(Crawler):
     type = "buff.onsell"
 
     def __init__(self, task):
+        # Handler.handle(self.type)
         pass
         # super(BuffOnsellCrawler, self).__init__(task)
 
@@ -35,38 +38,14 @@ class BuffOnsellCrawler(Crawler):
 
         response = htmlutil.get_response(url, headers=headers)
 
-        model = ScarletOnsell(name='test scarlet')
-        model.save()
+        data = json.loads(response.text)
 
-        print response.text
-        # soup = Readability(response.text, url)
-        # comment = {
-        #     'count': str(self.data.get('count','')),
-        # }
-        # if self.data.get('industry'):
-        #     comment.update({'industry': self.data.get('industry')})
-
-        # tag = str(getTag(clear_space(htmlutil.extract_text(soup.content))))
-
-        # crawl_data = {
-        #     'title': self.data['title'],
-        #     'pubtime': self.data.get('pubtime', datetime.utcnow),
-        #     'source': self.data['source'],
-        #     'publisher': self.data.get('publisher', ''),
-        #     'origin_source': self.data.get('origin_source', ''),
-        #     'url': url,
-        #     'key': self.data.get('key', ''),
-        #     'content': soup.content,
-        #     'tag': tag,
-        #     'comment': comment,
-        #     'producer_id': self.task.producer_id,
-        #     'category': self.task.category,
-        #     'application': self.task.application,
-        # }
-        # crawl_data.update(new_time())
-        # if crawl_data['content']:
-        #     model = SearchArticleModel(crawl_data)
-        #     export(model)
+        for item in data['data']['items']:
+            exist = ScarletOnsell.objects.filter(name=item['name'])
+            if not exist:
+                model = ScarletOnsell(name=item['name'], buy_num=item['buy_num'],
+                    sell_num=item['sell_num'], price=item['quick_price'])
+                model.save()
 
 
 if __name__ == "__main__":

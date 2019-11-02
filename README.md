@@ -62,5 +62,4 @@
 
 ### 开发一个爬虫实现
 
-可参考 `service/crawlerimpl/scarlet/news.py`，该文件可直接使用 python 当作脚本执行，而不需要启动整个爬虫框架。
-该爬虫实现并未完全完成，爬取的数据需要存储到mysql中，需要自己定义django的model，并且存储。
+可参考 `service/crawlerimpl/scarlet/demo.py`，该文件可直接使用 python 当作脚本执行，而不需要启动整个爬虫框架。
