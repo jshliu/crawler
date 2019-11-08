@@ -8,12 +8,17 @@
 
 	<property>
 		<name>redis.host</name>
-		<value>127.0.0.1</value>
+		<value>r-2ze013qkyiq3szetwupd.redis.rds.aliyuncs.com</value>
 	</property>
 
 	<property>
 		<name>redis.port</name>
 		<value>6379</value>
+	</property>
+
+	<property>
+		<name>redis.password</name>
+		<value>Abc123__</value>
 	</property>
 
 	<property>
@@ -48,7 +53,7 @@
 
 	<property>
 		<name>log.dir</name>
-		<value>/var/log/crawler</value>
+		<value>./log</value>
 	</property>
 
 	<property>
@@ -83,7 +88,7 @@
 
 	<property>
 		<name>task.pid</name>
-		<value>/tmp/crawlertask.pid</value>
+		<value>./crawlertask.pid</value>
 	</property>
 
 	<property>
@@ -98,7 +103,7 @@
 
 	<property>
 		<name>job.pid</name>
-		<value>/tmp/crawlerjob.pid</value>
+		<value>./crawlerjob.pid</value>
 	</property>
 
 </configuration>

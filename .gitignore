@@ -6,7 +6,8 @@
 .idea/
 *.iml
 
-log/
+log/*
+!log/.gitkeep
 .project
 .pydevproject
 .ropeproject/

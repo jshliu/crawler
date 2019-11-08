@@ -12,7 +12,9 @@ class RedisClient(object):
     def connect(self):
         pool = redis.ConnectionPool(
             host=settings.SITE.get('redis.host'),
-            port=settings.SITE.get('redis.port'), db=settings.SITE.get('redis.db'))
+            port=settings.SITE.get('redis.port'),
+            db=settings.SITE.get('redis.db'),
+            password=settings.SITE.get('redis.password'))
         return redis.Redis(connection_pool=pool)
 
 
@@ -62,7 +64,7 @@ class RedisQueryApi(object):
 
     def sort(self, name, start=None, num=None, by=None, get=None, desc=False, alpha=False, store=None):
         return self.instance.sort(name, start, num, by, get, desc, alpha, store)
-    
+
     def set(self, key, value):
         return self.instance.set(key, value)
 
