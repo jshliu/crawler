@@ -20,13 +20,16 @@ Crawler = Context().get("Crawler")
 
 class OnsellCrawler(Crawler):
 
-    type = "buff.accessory.onsell"
+    type = "buff.accessory.onsell" # 第一个 . 前面的为爬虫的数据源，该爬虫为 buff
 
     def __init__(self, task):
         pass
         super(OnsellCrawler, self).__init__(task)
 
     def crawl(self):
+        keyword = self.key # key在这里可以当作搜索关键词
+        print keyword
+        print '-----'
         url = 'https://buff.163.com/api/market/goods?game=dota2&page_num=1'
         headers = {
         }
@@ -46,7 +49,5 @@ class OnsellCrawler(Crawler):
 if __name__ == "__main__":
     from apps.base.models import Task
     t = Task.objects.filter(id=1).first()
-    # BaiduCrawler(t).crawl()
-    # SogouCrawler(key="it168", data={"source": "sogou"}).crawl()
 
     OnsellCrawler(t).crawl()
