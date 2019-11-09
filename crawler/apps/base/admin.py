@@ -7,7 +7,8 @@ Task = Context().get("Task")
 
 
 class TaskAdmin(admin.ModelAdmin):
-	list_display = ('crawler', 'key', 'update_time', 'status', 'interval')
+	list_display = ('crawler', 'key', 'update_time', 'status', 'interval', 'create_time')
+	list_display_links = ('update_time', 'create_time')
 	list_editable = ('crawler', 'key', 'status', 'interval')
 	list_filter = ('crawler', 'status', 'category', 'application', 'interval', 'timeout')
 	fields = ('key', 'data', 'producer_id', 'category', 'application', 'crawler', \

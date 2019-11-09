@@ -88,7 +88,7 @@
 
 	<property>
 		<name>task.pid</name>
-		<value>./crawlertask.pid</value>
+		<value>/Users/liujiasheng/workspace/crawler/crawlertask.pid</value>
 	</property>
 
 	<property>
@@ -103,7 +103,7 @@
 
 	<property>
 		<name>job.pid</name>
-		<value>./crawlerjob.pid</value>
+		<value>/Users/liujiasheng/workspace/crawler/crawlerjob.pid</value>
 	</property>
 
 </configuration>

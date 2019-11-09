@@ -22,7 +22,7 @@ mysql-python >= 1.2.5
 
 #django
 Django == 1.11.18
-# django_extensions == 2.2.5
+django_extensions == 2.2.5
 
 # lxml
 lxml >= 4.4.1
