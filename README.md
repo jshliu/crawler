@@ -3,6 +3,7 @@
 
 ## 环境要求
 
+* 操作系统: 类`unix`系统均可，windows下爬虫任务调度无法正常运行
 * python: `2.7`
 * pip: `最新稳定版`
 * redis: `最新稳定版`
@@ -62,4 +63,4 @@
 
 ### 开发一个爬虫实现
 
-可参考 `service/crawlerimpl/scarlet/demo.py`，该文件可直接使用 python 当作脚本执行，而不需要启动整个爬虫框架。
+可参考 `service/crawlerimpl/accessory/buff.py`，该文件可直接使用 python 当作脚本执行，而不需要启动整个爬虫框架。

@@ -32,12 +32,11 @@ class Crawler(object):
         self._structure()
 
     def _structure(self):
-        source, name = tuple(self.task.crawler.split('.'))
+        source = tuple(self.task.crawler.split('.'))[0]
         if not self.task.data:
             data = {}
         else:
             data = json.loads(self.task.data)
-            str2time(data)
         if not data.has_key('source'):
             data.update({'source': source}) 
         self.key = self.task.key

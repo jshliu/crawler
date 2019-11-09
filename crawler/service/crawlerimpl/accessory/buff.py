@@ -15,21 +15,16 @@ from context.context import Context
 
 htmlutil = Context().get("htmlutil")
 Url = Context().get("Url")
-SearchContentCrawler = Context().get("SearchContentCrawler")
-FatherCrawler = Context().get("FatherCrawler")
-Field = Context().get("Field")
 Crawler = Context().get("Crawler")
-Handler = Context().get("Handler")
 
 
-class BuffOnsellCrawler(Crawler):
+class OnsellCrawler(Crawler):
 
-    type = "buff.onsell"
+    type = "buff.accessory.onsell"
 
     def __init__(self, task):
-        # Handler.handle(self.type)
         pass
-        # super(BuffOnsellCrawler, self).__init__(task)
+        super(OnsellCrawler, self).__init__(task)
 
     def crawl(self):
         url = 'https://buff.163.com/api/market/goods?game=dota2&page_num=1'
@@ -49,11 +44,9 @@ class BuffOnsellCrawler(Crawler):
 
 
 if __name__ == "__main__":
-    # from apps.base.models import Task
-    # from json import dumps
-    # t = Task(key=u"杭州煤气汽车爆炸 1人死亡", data=dumps({"last_info": {"pubtime": "2015-1-1 00:00:00"}}), crawler="sogou.news", producer_id=1, category="event", application="yqj")
-    # t.save()
+    from apps.base.models import Task
+    t = Task.objects.filter(id=1).first()
     # BaiduCrawler(t).crawl()
     # SogouCrawler(key="it168", data={"source": "sogou"}).crawl()
 
-    BuffOnsellCrawler({}).crawl()
+    OnsellCrawler(t).crawl()
