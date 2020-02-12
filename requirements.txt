@@ -21,7 +21,7 @@ redis >= 2.10.3
 mysql-python >= 1.2.5
 
 #django
-Django == 1.11.18
+Django == 1.11.28
 django_extensions == 2.2.5
 
 # lxml
